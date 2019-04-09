@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout">
+<head>
+    <title>Q&A - Add a Question</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <span id="errorMsg" th:if="${errorMsg}" th:text="${errorMsg}"></span>
+        <h2>Add a question:</h2>
+        <form action="#" th:action="@{/question/add}" th:object="${question}" method="post">
+            <p>Name: <input type="text" th:field="*{name}"/> </p>
+            <p>Content: <input type="text" th:field="*{content}"/> </p>
+            <p>User: <input type="text" th:field="*{user}"/> </p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+    </div>
+    </body>
+</html>
